@@ -36,13 +36,16 @@ func totalBalance(c ...Coin) {
 	for _, v := range c {
 		total += v.getBalance()
 	}
-	fmt.Println(total)
+	fmt.Println("Total balance is: $", total)
 }
 
 func main() {
 
 	b := Bitcoin{3500, 2}
 	r := Ripple{0.2, 1000}
+
+	fmt.Println("Bitcoin balance is: $", b.getBalance())
+	fmt.Println("Ripple balance is: $", r.getBalance())
 
 	totalBalance(b, r)
 

@@ -1,24 +1,24 @@
-package main 
+package main
 
 import "fmt"
 import "runtime"
 import "time"
 
-func main () {
+func main() {
 	// defer statement
 	defer fmt.Println("This will be executed until the surrounding function returns.")
 
-	sum := 0;
+	sum := 0
 
 	// Go has only one looping construct, the for loop.
-	for i := 0; i <10; i++ {
+	for i := 0; i < 10; i++ {
 		sum += i
 	}
 
 	fmt.Println(sum)
 
 	// For continued. The init and post statements are optional. Can drop the semicolons
-	multiply := 2;
+	multiply := 2
 	for multiply < 20 {
 		multiply *= multiply
 	}
@@ -26,10 +26,10 @@ func main () {
 	fmt.Println(multiply)
 
 	// If statement
-	fmt.Println( "sum", check(sum), "and multiply", check(multiply))
+	fmt.Println("sum", check(sum), "and multiply", check(multiply))
 
 	// Switch case
-	fmt.Println("Go runs on") 
+	fmt.Println("Go runs on")
 	switch os := runtime.GOOS; os {
 	case "darwin":
 		fmt.Println("MAC OS")
@@ -40,7 +40,8 @@ func main () {
 	}
 
 	// Switch evaluation order
-	// comparing the case expression. Stop if case expression equal switch expression
+	// comparing the case expression.
+	// Stop if case expression equal switch expression
 	fmt.Println("When's Saturday?")
 	today := time.Now().Weekday()
 	switch time.Saturday {
@@ -54,7 +55,6 @@ func main () {
 		fmt.Println("Too far away.")
 	}
 
-
 	// Switch with no condition
 	//This construct can be a clean way to write long if-then-else chains.
 	t := time.Now()
@@ -66,9 +66,7 @@ func main () {
 	default:
 		fmt.Println("Good evening.")
 	}
-
 }
-
 
 func check(x int) string {
 
